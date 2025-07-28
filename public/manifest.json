@@ -6,17 +6,18 @@
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
+      "src": "favicon.ico",
+      "type": "image/x-icon",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
+      "src": "favicon.ico",
+      "type": "image/x-icon",
       "sizes": "512x512",
       "purpose": "any"
     }
@@ -34,14 +35,14 @@
       "short_name": "Biglietti",
       "description": "Visualizza tutti i tuoi biglietti",
       "url": "/tickets",
-      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "favicon.ico", "sizes": "64x64" }]
     },
     {
       "name": "Scansiona Codice QR",
       "short_name": "Scansiona",
       "description": "Scansiona un codice QR per verificare un biglietto",
       "url": "/validate",
-      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "favicon.ico", "sizes": "64x64" }]
     }
   ],
   "related_applications": [],

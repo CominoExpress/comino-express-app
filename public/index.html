@@ -20,22 +20,21 @@
     
     <!-- iOS icons -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="%PUBLIC_URL%/logo152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/logo180.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="%PUBLIC_URL%/logo167.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="%PUBLIC_URL%/logo512.png" />
     
-    <!-- iOS splash screens -->
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash1668x2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash1536x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash1179x2556.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash1284x2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash1133x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash1133x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/splash640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" />
+    <!-- iOS splash screens - usando le immagini disponibili -->
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 2)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/logo512.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" />
     
     <!-- PWA manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -206,6 +205,35 @@
         animation: pulse 1.5s infinite ease-in-out;
       }
 
+      .splash-logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 24px;
+        animation: pulse 1.5s infinite ease-in-out;
+      }
+
+      .splash-logo-icon {
+        font-size: 4rem;
+        margin-bottom: 16px;
+      }
+
+      .splash-logo-text {
+        color: var(--primary-color);
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+        letter-spacing: 2px;
+      }
+
+      .splash-logo-subtitle {
+        color: var(--text-color);
+        font-size: 1rem;
+        margin-top: 8px;
+        opacity: 0.8;
+      }
+
       .splash-spinner {
         width: 40px;
         height: 40px;
@@ -256,7 +284,11 @@
     
     <!-- Splash screen durante il caricamento -->
     <div id="splash-screen">
-      <img src="%PUBLIC_URL%/logo.PNG" alt="Comino EXPRESS Logo" class="splash-logo" />
+      <div class="splash-logo-container">
+        <div class="splash-logo-icon">🚢</div>
+        <h1 class="splash-logo-text">COMINO EXPRESS</h1>
+        <div class="splash-logo-subtitle">Sistema Biglietti</div>
+      </div>
       <div class="splash-spinner"></div>
     </div>
     

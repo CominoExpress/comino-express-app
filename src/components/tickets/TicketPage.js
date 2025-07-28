@@ -3,15 +3,22 @@ import { useParams } from 'react-router-dom';
 import { db } from '../../firebase/config';
 import { doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
 import './TicketPage.css';
-import { FaTicketAlt, FaMapMarkerAlt, FaCalendarAlt, FaClock, FaUser, FaMoneyBillWave, FaQrcode } from 'react-icons/fa';
+import { FaTicketAlt, FaMapMarkerAlt, FaCalendarAlt, FaClock, FaUser, FaMoneyBillWave, FaQrcode, FaShip } from 'react-icons/fa';
 import { getTicketCacheKey, getPersistentCache, setPersistentCache, CACHE_DURATION } from '../../utils/cacheUtils';
 import { IoCalendarOutline, IoTimeOutline, IoLocationOutline, IoPersonOutline, IoTicketOutline, IoCardOutline, IoPricetagOutline, IoInformationCircleOutline, IoQrCodeOutline, IoCheckmarkCircle } from 'react-icons/io5';
 // Importiamo il nostro hook di device detection
 import { useDevice } from '../../contexts/DeviceContext';
 import { wp, hp, scaleSize } from '../../utils/responsiveUtils';
 
-// Logo dell'app in base64 (placeholder - sostituire con il logo reale)
-const APP_LOGO = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiByeD0iMjQiIGZpbGw9IiM0QTkwRTIiLz4KPHBhdGggZD0iTTM2IDQxQzM2IDM4LjIzODYgMzguMjM4NiAzNiA0MSAzNkg4N0M4OS43NjE0IDM2IDkyIDM4LjIzODYgOTIgNDFWODdDOTIgODkuNzYxNCA4OS43NjE0IDkyIDg3IDkySDQxQzM4LjIzODYgOTIgMzYgODkuNzYxNCAzNiA4N1Y0MVoiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIvPgo8cGF0aCBkPSJNOTIgNTJIMTA0QzEwNi43NjEgNTIgMTA5IDU0LjIzODYgMTA5IDU3VjcyQzEwOSA3NC43NjE0IDEwNi43NjEgNzcgMTA0IDc3SDkyVjUyWiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxwYXRoIGQ9Ik0zNiA1MkgyNEMyMS4yMzg2IDUyIDE5IDU0LjIzODYgMTkgNTdWNzJDMTkgNzQuNzYxNCAyMS4yMzg2IDc3IDI0IDc3SDM2VjUyWiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0Ii8+CjxjaXJjbGUgY3g9IjY0IiBjeT0iNjQiIHI9IjE2IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+Cg==";
+// Logo dell'app come componente React
+const AppLogo = () => (
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '10px' }}>
+    <FaShip size={32} color="#435bcc" />
+    <div style={{ color: '#435bcc', fontWeight: 'bold', fontSize: '16px', marginTop: '5px' }}>
+      COMINO EXPRESS
+    </div>
+  </div>
+);
 
 // Funzione di fallback per rilevamento dispositivo
 const useDeviceFallback = () => {
@@ -668,7 +675,7 @@ function TicketPage() {
       ) : ticket ? (
         <div className="ticket-container">
           <div className="ticket-brand-header">
-            <img src={APP_LOGO} alt="App Logo" className="app-logo" />
+            <AppLogo />
             <h1>{typeof ticket.eventName === 'string' ? ticket.eventName : 'Evento'}</h1>
           </div>
           

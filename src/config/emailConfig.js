@@ -1,5 +1,6 @@
 export const EMAIL_CONFIG = {
-  SERVICE_ID: 'service_co17e5g',
-  TEMPLATE_ID: 'template_0t7v2ts',
-  PUBLIC_KEY: '66gL3F6watdN_JHl2'
+  SERVICE_ID: 'service_3m8eigd',
+  TEMPLATE_ID: 'template_yqwpmvl',
+  PUBLIC_KEY: 'n_LrDS5YZyoSgFR_f',
+  PRIVATE_KEY: 'TErKRa9yks-G3Ygs1fOsy'
 }; 

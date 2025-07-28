@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { db } from '../../firebase/config';
-import { collection, query, where, getDocs, doc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
-import { Html5QrcodeScanner } from 'html5-qrcode';
+import { db, auth } from '../../firebase/config';
+import { collection, doc, getDoc, updateDoc, addDoc, getDocs, query, where } from 'firebase/firestore';
 import { useAuth } from '../../contexts/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
-import './ValidateTicket.css';
+import { useNavigate, Link } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
-import { auth } from '../../firebase/config';
+import QRCodeScanner from './QRCodeScanner';
+import { FaShip, FaTicketAlt } from 'react-icons/fa';
+import './ValidateTicket.css';
 
 function ValidateTicket() {
   const { currentUser, logout } = useAuth();
@@ -176,8 +176,11 @@ function ValidateTicket() {
           <div className="logo-container">
             <Link to="/" className="logo-link">
               <div className="app-logo">
-                <img src="/logo.png" alt="Logo" className="logo-image" />
-                <span className="logo-text">Ticket Validator</span>
+                <div className="logo-icon-container">
+                  <FaShip size={32} color="#435bcc" />
+                  <FaTicketAlt size={20} color="#435bcc" style={{ marginLeft: '8px' }} />
+                </div>
+                <span className="logo-text">Comino EXPRESS - Validator</span>
               </div>
             </Link>
           </div>

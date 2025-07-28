@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { db } from '../../firebase/config';
 import Header from '../common/Header';
 import './ValidatorDashboard.css';
-import logo from '../../assets/wave.png';
+import { FaShip, FaTicketAlt } from 'react-icons/fa';
 
 function ValidatorDashboard() {
   const [ticketCode, setTicketCode] = useState('');
@@ -20,7 +20,13 @@ function ValidatorDashboard() {
       <Header />
       <div className="validator-content">
         <div className="logo-container">
-          <img src={logo} alt="Wave Logo" className="logo" />
+          <div className="app-logo-text">
+            <FaShip size={48} color="#435bcc" />
+            <h1 style={{ color: '#435bcc', margin: '10px 0', fontSize: '24px' }}>
+              COMINO EXPRESS
+            </h1>
+            <FaTicketAlt size={24} color="#435bcc" />
+          </div>
         </div>
         
         <div className="validation-form">

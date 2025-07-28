@@ -5,7 +5,6 @@ import { NotificationProvider } from './contexts/NotificationContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { DeviceProvider } from './contexts/DeviceContext';
 import { useState, useEffect } from 'react';
-import useTheme from './hooks/useTheme';
 import './styles/theme.css';
 import './styles/responsive.css';
 import './App.css';
@@ -28,16 +27,8 @@ import TicketManagement from './components/TicketManagement/TicketManagement';
 
 function App() {
   const [isAppReady, setIsAppReady] = useState(false);
-  const { theme } = useTheme();
 
   useEffect(() => {
-    // Reindirizza se l'URL contiene percorsi non necessari
-    const currentPath = window.location.pathname;
-    if (currentPath.includes('/CominoExpress/comino-express-app')) {
-      window.location.href = window.location.origin + '/';
-      return;
-    }
-
     // Gestione viewport
     const metaViewport = document.querySelector('meta[name="viewport"]');
     if (metaViewport) {
@@ -112,12 +103,12 @@ function App() {
   const preventScroll = (e) => {};
 
   return (
-    <div className={`app ${isAppReady ? 'app-ready' : 'app-loading'}`} style={{ overflowY: 'auto' }} data-theme={theme}>
-      <Router>
-        <ThemeProvider>
-          <DeviceProvider>
-            <AuthProvider>
-              <NotificationProvider>
+    <div className={`app ${isAppReady ? 'app-ready' : 'app-loading'}`} style={{ overflowY: 'auto' }}>
+      <ThemeProvider>
+        <DeviceProvider>
+          <AuthProvider>
+            <NotificationProvider>
+              <Router>
                 <Routes>
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
@@ -194,11 +185,11 @@ function App() {
                   />
                   <Route path="/" element={<Navigate to="/login" />} />
                 </Routes>
-              </NotificationProvider>
-            </AuthProvider>
-          </DeviceProvider>
-        </ThemeProvider>
-      </Router>
+              </Router>
+            </NotificationProvider>
+          </AuthProvider>
+        </DeviceProvider>
+      </ThemeProvider>
     </div>
   );
 }

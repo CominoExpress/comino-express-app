@@ -3,7 +3,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate, Link } from 'react-router-dom';
 import { db } from '../../firebase/config';
 import { doc, getDoc } from 'firebase/firestore';
-import { FaUser, FaLock } from 'react-icons/fa';
+import { FaUser, FaLock, FaShip } from 'react-icons/fa';
 import './Login.css';
 
 function Login() {
@@ -52,7 +52,12 @@ function Login() {
     <div className="login-container">
       <div className="login-box">
         <div className="login-header">
-          <img src="/logo.PNG" alt="Logo" className="login-logo" />
+          <div className="login-logo-container">
+            <FaShip size={48} color="#435bcc" />
+            <h1 style={{ color: '#435bcc', margin: '10px 0', fontSize: '24px' }}>
+              COMINO EXPRESS
+            </h1>
+          </div>
           <h2>Accedi</h2>
           <p>Benvenuto nel sistema di gestione biglietti</p>
         </div>
