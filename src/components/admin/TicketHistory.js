@@ -514,7 +514,7 @@ function TicketHistory() {
       `Totale: €${ticket.totalPrice}\n` +
       `Codice: ${ticket.code}\n\n` +
       `Per visualizzare e validare il biglietto, visita questo link:\n` +
-      `https://gestione-pr-ultimata.vercel.app/ticket/${ticket.id || ticket.ticketCode || ticket.code}`;
+      `${window.location.origin}/ticket/${ticket.id || ticket.ticketCode || ticket.code}`;
 
     // Se c'è un numero di telefono, usa quello come destinatario
     const phoneNumber = ticket.customerPhone || ticket.customer_phone;

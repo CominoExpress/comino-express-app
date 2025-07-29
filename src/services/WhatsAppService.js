@@ -144,8 +144,8 @@ export const sendTicketViaWhatsApp = async (ticket, phoneNumber) => {
 
     console.log('Codice biglietto per il link:', ticketCode);
     
-    // Genera il link del biglietto usando l'URL di Vercel
-    const ticketLink = `https://gestione-pr-ultimata.vercel.app/ticket/${ticketCode}`;
+    // Genera il link del biglietto usando l'URL dinamico
+    const ticketLink = `${window.location.origin}/ticket/${ticketCode}`;
     console.log('Link generato:', ticketLink);
 
     // Costruisci il messaggio
