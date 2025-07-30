@@ -20,6 +20,7 @@ import TeamLeaderDashboard from './components/team-leader/TeamLeaderDashboard';
 import PromoterDashboard from './components/promoter/PromoterDashboard';
 import TicketHistory from './components/tickets/TicketHistory';
 import TicketPage from './components/tickets/TicketPage';
+import TicketPageDebug from './components/tickets/TicketPageDebug';
 import PrivacyPolicy from './components/legal/PrivacyPolicy';
 import TermsOfService from './components/legal/TermsOfService';
 import ValidatorPage from './pages/ValidatorPage';
@@ -173,7 +174,7 @@ function App() {
                   />
                   <Route 
                     path="/ticket/:ticketCode" 
-                    element={<TicketPage />} 
+                    element={<TicketPageDebug />} 
                   />
                   <Route 
                     path="/dashboard" 
