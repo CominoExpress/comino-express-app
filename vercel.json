@@ -10,6 +10,7 @@
       }
     }
   ],
+  "buildCommand": "npm run build:vercel",
   "routes": [
     {
       "src": "/static/(.*)",
