@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sistema di gestione biglietti per Comino EXPRESS",
   "author": "Comino EXPRESS Team",
-  "homepage": ".",
+  "homepage": "https://comino-express-app.vercel.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/CominoExpress/comino-express-app.git"
